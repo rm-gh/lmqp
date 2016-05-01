@@ -1,0 +1,205 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Réserver un emplacement{% endblock %}
+
+{% block content %}
+	<div class="row"><div class="col-xs-12">
+		<h1>De 14h à 19h, bourse de matériel</h1>
+		<h4 class="text-justify">Comme pour les précédentes années, nous proposons de mettre en relation les vendeurs et les acheteurs lors de cette journée. Pour cela, une partie du site sera réservée aux échanges.</h4>
+	</div></div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<img src="{{ app.request.basepath }}/images/stock_exc.jpg" alt="Bourse de matériel" title="Exemple d'exposant en 2013" class="photo" />
+		</div>
+	</div>
+	
+	<div class="row"><div class="col-xs-12">
+		<h1>Pour les pros, réserver un emplacement</h1>
+	</div></div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+		<h4 class="text-justify">Nous mettons à disposition des professionnels des stands où ils pourront proposer à la vente leurs produits et services.</h4>
+		</div>
+		<div class="col-sm-offset-1 col-sm-10">
+		<p class="text-justify">
+			Conditions : 
+			<ul class="text-justify">
+				<li>Activité <u>en rapport avec la musique</u></li>
+				<li>Pas d'enseignement musical (réservé à l'école municipale)</li>
+				<li><i>Exemples de produits : instruments, matériel de sono, disques, CDs, DVDs, partitions...</i></li>
+				<li><i>Exemples de services : réparation, restauration, ...</i></li>
+			</ul>
+		</p>
+		</div>
+		
+		<div class="col-sm-offset-1 col-sm-10">
+		<p class="text-justify">
+			Infos pratiques : 
+			<ul class="text-justify">
+				<li>Installation <b>avant 14h</b> le jour même</li>
+				<li>Rangement <b>à partir de 19h</b></li>
+				<li>Respect des horaires impératif afin de faciliter le passage des visiteurs et d'optimiser la sécurité</li>
+				<li><b>Tarif : Gratuit</b></li>
+				<li><b>Taille : 2 grandes tables</b></li>
+				<li>Les emplacements seront abrités</li>
+				<li><u>Vous restez entièrement responsable de votre espace durant toute la durée</u></li>
+				<li>Rendre les lieux propres</li>
+			</ul>
+		</p>
+		</div>
+	</div>
+
+	<div class="row"><div class="col-xs-12">
+
+		<div class="well">
+			<h4 class="text-justify">Si vous souhaitez réserver un emplacement pour l'après-midi, merci de remplir le formulaire d'inscription ci-après :</h4>
+		
+			{{ form_start(bookingForm, { 'attr': {'class': 'form-horizontal'} }) }}
+			<div class="form-group">
+				{{ form_label(bookingForm.firstname, 'Prénom', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-4">
+					{{ form_errors(bookingForm.firstname) }}
+					<div class="input-group">
+						{{ form_widget(bookingForm.firstname, {'attr': {'class': 'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ bookingInfo.firstname }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				{{ form_label(bookingForm.lastname, 'Nom', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-4">
+					{{ form_errors(bookingForm.lastname) }}
+					<div class="input-group">
+						{{ form_widget(bookingForm.lastname, {'attr': {'class': 'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ bookingInfo.lastname }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				{{ form_label(bookingForm.email, 'Email', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-10">
+					{{ form_errors(bookingForm.email) }}
+					<div class="input-group">
+						{{ form_widget(bookingForm.email, {'attr': {'class': 'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ bookingInfo.email }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				{{ form_label(bookingForm.phone, 'Téléphone', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-10">
+					{{ form_errors(bookingForm.phone) }}
+					<div class="input-group">
+						{{ form_widget(bookingForm.phone, {'attr': {'class': 'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ bookingInfo.phone }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				{{ form_label(bookingForm.address, 'Adresse', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-10">
+					{{ form_errors(bookingForm.address) }}
+<!-- 					<div class="input-group"> -->
+						{{ form_widget(bookingForm.address, {'attr': {'class': 'form-control textarea-class'}}) }}
+<!--						<div class="input-group-addon">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ bookingInfo.address }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>-->
+<!-- 					</div> -->
+				</div>
+			</div>
+			
+			<div class="form-group">
+				{{ form_label(bookingForm.activity, 'Activité', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-10">
+					{{ form_errors(bookingForm.activity) }}
+					<div class="input-group">
+						{{ form_widget(bookingForm.activity, {'attr': {'class': 'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ bookingInfo.activity }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				{{ form_label(bookingForm.agreement, 'Je souhaite réserver un emplacement pour la bourse et accepte pleinement et sans réserve les conditions particulières', { 'label_attr': {'class':'col-sm-11 control-label'}}) }}
+				<div class="col-sm-1">
+					{{ form_errors(bookingForm.agreement) }}
+					<div class="input-group">
+						{{ form_widget(bookingForm.agreement, {'attr': {'class': 'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ bookingInfo.agreement }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-5 col-sm-2">
+					<input class="form-control btn btn-success" type="submit" name="msg-submit" value="Réserver" />
+				</div>
+			</div>
+			{{ form_end(bookingForm) }}
+		</div>
+	</div></div>
+	
+	<div class="row"><div class="col-xs-12">
+		<h1>Pour les particuliers, confier son matériel</h1>
+	</div></div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h4 class="text-justify">Vous avez un violon à vendre et ne voulez pas perdre votre journée à chercher un acquéreur ? Nous avons la solution : un stand dédié aux particuliers !</h4>
+		</div>
+		<div class="col-sm-offset-1 col-sm-10">
+		<p class="text-justify">
+			Conditions : 
+			<ul class="text-justify">
+				<li>Objet ou lot <u>en rapport avec la musique</u></li>
+				<li>Préparer les modalités de la vente (prix, négociation)</li>
+				<li><i>Exemples de produits : instrument, matériel de sono, lot de disques, CDs, DVDs, partitions...</i></li>
+			</ul>
+		</p>
+		</div>
+		
+		<div class="col-sm-offset-1 col-sm-10">
+		<p class="text-justify">
+			Infos pratiques : 
+			<ul class="text-justify">
+				<li>Venir de préférence <b>entre 14h et 15h</b> </li>
+				<li>Récupération du fruit de la vente (ou de l'objet) <b>à partir de 19h</b></li>
+				<li><b>Tarif : 5€ par objet/lot</b></li>
+				<li>Le stand sera abrité</li>
+				<li>Un bénévole assurera une surveillance constante de 14h à 19h</li>
+				<li><u>Nous ne garantissons pas que votre bien trouvera preneur</u></li>
+			</ul>
+		</p>
+		</div>
+	</div>
+	
+{% endblock %}

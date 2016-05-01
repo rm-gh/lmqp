@@ -1,0 +1,166 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Nous contacter{% endblock %}
+
+{% block content %}
+	
+	{% for flashMessage in app.session.flashbag.get('success') %}
+		<div class="alert alert-success">
+			{{ flashMessage }}
+		</div>
+	{% endfor %}
+	{% for flashMessage in app.session.flashbag.get('warning') %}
+		<div class="alert alert-warning">
+			{{ flashMessage }}
+		</div>
+	{% endfor %}
+	{% for flashMessage in app.session.flashbag.get('danger') %}
+		<div class="alert alert-danger">
+			{{ flashMessage }}
+		</div>
+	{% endfor %}
+
+	
+	
+	
+	<div class="row"><div class="col-xs-12">
+		<h1>Newsletter</h1>
+	</div></div>
+	
+	<div class="well">
+		<h4 class="text-justify">Inscrivez-vous à la newsletter pour recevoir toutes les nouvelles informations !</h4>
+		{{ form_start(newsletterForm, { 'attr': {'class': 'form-horizontal'} }) }}
+			<div class="form-group">
+				{{ form_label(newsletterForm.email, 'Entrez votre adresse e-mail :', { 'label_attr': {'class':'col-sm-4 col-md-3 control-label'}}) }}
+				<div class="col-sm-6 col-md-7">
+					{{ form_errors(newsletterForm.email) }}
+					<div class="input-group">
+						{{ form_widget(newsletterForm.email, {'attr': {'class':'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ newsletterInfo.email}}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-2 text-left"><input class="form-control btn btn-success" type="submit" name="news-submit" value="Souscrire" /></div>
+			</div>
+		{{ form_end(newsletterForm) }}
+	</div>
+	
+	
+	
+	<div class="row"><div class="col-xs-12">
+		<h1>Contact</h1>
+	</div></div>
+	
+	<div class="well"> <!-- CONTACT FORM -->
+		<h4 class="text-justify">Vous pouvez aussi remplir ce formulaire pour toute demande d'information.</h4>
+		<div class="col-sm-offset-4 col-sm-4 alert alert-info"><small>Les champs marqués d'une astérisque sont obligatoires.</small></div><div class="clearfix"></div>
+		{{ form_start(messageForm, { 'attr': {'class': 'form-horizontal'} }) }}
+			<div class="form-group">
+				{{ form_label(messageForm.firstname, 'Prénom*', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-4">
+					{{ form_errors(messageForm.firstname) }}
+					<div class="input-group">
+						{{ form_widget(messageForm.firstname, {'attr': {'class': 'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ messageInfo.firstname }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				{{ form_label(messageForm.lastname, 'Nom*', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-4">
+					{{ form_errors(messageForm.lastname) }}
+					<div class="input-group">
+						{{ form_widget(messageForm.lastname, {'attr': {'class': 'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ messageInfo.lastname }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				{{ form_label(messageForm.email, 'Email*', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-10">
+					{{ form_errors(messageForm.email) }}
+					<div class="input-group">
+						{{ form_widget(messageForm.email, {'attr': {'class': 'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ messageInfo.email }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				{{ form_label(messageForm.phone, 'Téléphone', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-10">
+					{{ form_errors(messageForm.phone) }}
+					<div class="input-group">
+						{{ form_widget(messageForm.phone, {'attr': {'class': 'form-control'}}) }}
+						<div class="input-group-btn">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ messageInfo.phone }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				{{ form_label(messageForm.message, 'Message*', { 'label_attr': {'class':'col-sm-2 control-label'}}) }}
+				<div class="col-sm-10">
+					{{ form_errors(messageForm.message) }}
+<!-- 					<div class="input-group"> -->
+						{{ form_widget(messageForm.message, {'attr': {'class': 'form-control textarea-class'}}) }}
+<!--						<div class="input-group-addon">
+							<button class="btn btn-info" type="button" data-toggle="popover" title="Comment remplir..." data-content="{{ messageInfo.message }}" data-container="body" data-placement="auto bottom">
+								<span class="glyphicon glyphicon-info-sign shadowed"></span>
+							</button>
+						</div>-->
+<!-- 					</div> -->
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-offset-5 col-sm-2">
+					<input class="form-control btn btn-success" type="submit" name="msg-submit" value="Envoyer" />
+				</div>
+			</div>
+		{{ form_end(messageForm) }}
+	</div>	<!-- END CONTACT FORM -->
+	
+	
+	
+	<div class="row"><div class="col-xs-12">
+		<h1>Coordonnées traditionnelles</h1>
+	</div></div>
+	
+	<div class="row">
+		<div class="col-sm-offset-2 col-sm-4">
+			<h4>
+				Orchestre d'Harmonie Not'en Bulles<br/>
+				2 rue du Pont Gavé<br/>
+				42330 Saint-Galmier<br/>
+				Tél. 06 08 96 55 01
+			</h4>
+			<div class="visible-xs-block">-</div>
+		</div>
+		<div class="col-sm-4">
+			<h4>
+				Ecole de Musique et de Danse<br/>
+				2 rue du Pont Gavé<br/>
+				42330 Saint-Galmier<br/>
+				Tél. 04 77 54 03 01
+			</h4>
+		</div>
+	</div>
+{% endblock %}

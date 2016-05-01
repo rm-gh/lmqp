@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}À venir{% endblock %}
+
+{% block content %}
+	<div class="row"><div class="col-xs-12">
+		<h1>À venir...</h1>
+		<h3>Repassez nous voir régulièrement ou inscrivez-vous à la newsletter !</h3>
+		<div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-12">
+			<div class="tile" style="background:url('{{app.request.basepath}}/images/journal.jpg') no-repeat center/cover">
+				<a href="{{ path('contact') }}"><div class="inside-tile">
+					<h4>Inscrivez-<wbr/>vous à la newsletter pour vous tenir informé !</h4>
+				</div></a>
+			</div>
+		</div>
+	</div></div>
+{% endblock %}

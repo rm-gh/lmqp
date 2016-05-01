@@ -1,0 +1,60 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-xs-offset-2 col-sm-offset-3 col-md-offset-4 col-xs-8 col-sm-6 col-md-4 main-title">
+			<img src="images/lmqp.png" alt="La Musique Qui Pétille 11 Juin 2016 Kiosque Badoit St-Galmier" class="lmqp"/>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12"><h4 class="text-justify">Cette année, pour sa troisième édition, notre festival se recentre sur une seule grande journée et s'offre un programme encore plus étoffé :</h4></div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 col-sm-6 col-xs-12">
+			<div class="tile" style="background:url('{{app.request.basepath}}/images/emdsg.jpg') no-repeat center/cover">
+				<a href="{{ path('prog') }}"><div class="inside-tile">
+					<h4>L'après-midi<br/>Portes Ouvertes de l'Ecole de Musique et de Danse</h4>
+				</div></a>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12">
+			<div class="tile" style="background:url('{{app.request.basepath}}/images/msbb.jpg') no-repeat center/cover">
+				<a href="{{ path('prog') }}"><div class="inside-tile">
+					<h4>Le soir<br/>6 groupes en concerts (harmonie, jazz, rock)</h4>
+				</div></a>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12">
+			<div class="tile" style="background:url('{{app.request.basepath}}/images/stock_exc.jpg') no-repeat center/cover">
+				<a href="{{ path('booking') }}"><div class="inside-tile">
+					<h4>Bourse aux instruments, accessoires, partitions...</h4>
+				</div></a>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12">
+			<div class="tile" style="background:url('{{app.request.basepath}}/images/food2.jpg') no-repeat center/cover">
+				<a href="{{ path('infos') }}"><div class="inside-tile">
+					<h4>Restauration et buvette durant toute la durée de la manifestation</h4>
+				</div></a>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12">
+			<div class="tile" style="background:url('{{app.request.basepath}}/images/paint.jpg') no-repeat center/cover">
+				<a href="{{ path('prog') }}"><div class="inside-tile">
+					<h4>Exposition d'art (peinture) sur le thème de la musique</h4>
+				</div></a>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12">
+			<div class="tile" style="background:url('{{app.request.basepath}}/images/journal.jpg') no-repeat center/cover">
+				<a href="{{ path('contact') }}"><div class="inside-tile">
+					<h4>Inscrivez-<wbr/>vous à la newsletter pour vous tenir informé !</h4>
+				</div></a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
