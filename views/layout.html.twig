@@ -78,12 +78,12 @@
 					<a href="http://www.harmonienotenbulles.fr" target="_blank" title="www.harmonienotenbulles.fr" class="text-nowrap">Not'en Bulles</a>.<br/>
 				</p></div>
 				<div class="row">
-					<div class="col-xs-6 text-right">
+					<div class="col-xs-6 text-right light-border-right">
 							<a href="https://www.mozilla.org/fr/firefox/products/" title="Télécharger Mozilla Firefox">Firefox</a><br/>
 							<a href="https://www.google.fr/chrome" title="Télécharger Google Chrome">Chrome</a>
 					</div>
-					<div class="col-xs-6 text-left" style="border-left:1px solid white">
-						<span class="text-nowrap"><a href="{{ path('press') }}" title="Des infos pour vos articles">Infos Presse</a></span><br/>
+					<div class="col-xs-6 text-left">
+<!-- 						<span class="text-nowrap"><a href="{{ path('press') }}" title="Des infos pour vos articles">Infos Presse</a></span><br/> -->
 						<span class="text-nowrap"><a href="{{ path('contact') }}" title="Accéder au formulaire de contact">Nous contacter</a></span>
 					</div>
 				</p>
@@ -95,6 +95,41 @@
 		
 		<script>
 			$(function () {	$('[data-toggle="popover"]').popover()	})
+		</script>
+		
+		<script>
+			$('#parc').on('show.bs.collapse', function (e)
+			{
+				$(".parc-toggle").addClass('glyphicon-triangle-bottom').removeClass('glyphicon-triangle-right');
+			});
+			$('#parc').on('hide.bs.collapse', function (e)
+			{
+				$(".parc-toggle").addClass('glyphicon-triangle-right').removeClass('glyphicon-triangle-bottom');			
+			});		
+			$('#scene1').on('show.bs.collapse', function (e)
+			{
+				$(".scene1-toggle").addClass('glyphicon-triangle-bottom').removeClass('glyphicon-triangle-right');
+			});
+			$('#scene1').on('hide.bs.collapse', function (e)
+			{
+				$(".scene1-toggle").addClass('glyphicon-triangle-right').removeClass('glyphicon-triangle-bottom');			
+			});		
+			$('#scene2').on('show.bs.collapse', function (e)
+			{
+				$(".scene2-toggle").addClass('glyphicon-triangle-bottom').removeClass('glyphicon-triangle-right');
+			});
+			$('#scene2').on('hide.bs.collapse', function (e)
+			{
+				$(".scene2-toggle").addClass('glyphicon-triangle-right').removeClass('glyphicon-triangle-bottom');			
+			});		
+			$('#danse').on('show.bs.collapse', function (e)
+			{
+				$(".danse-toggle").addClass('glyphicon-triangle-bottom').removeClass('glyphicon-triangle-right');
+			});
+			$('#danse').on('hide.bs.collapse', function (e)
+			{
+				$(".danse-toggle").addClass('glyphicon-triangle-right').removeClass('glyphicon-triangle-bottom');			
+			});		
 		</script>
 	</body>
 </html>

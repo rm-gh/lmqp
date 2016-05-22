@@ -1,0 +1,85 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Programme{% endblock %}
+
+{% block content %}
+	<div class="row"><div class="col-xs-12">
+		<h1>Historique</h1>
+	</div></div>
+	
+	<div class="row">
+		<div class="col-xs-4 col-sm-2">
+			<h2>2016</h2>
+		</div>
+		<div class="col-xs-8 col-sm-10 text-left">
+			<h3 class="lightgreen"></h3>
+		</div>
+
+		<div class="col-xs-offset-2 col-xs-10 col-sm-offset-1 col-sm-11 text-left light-border-left" style="padding-left:8%">
+			<h5>Un nouveau logo est créé spécialement pour cet événement</h5>
+			<div class="row">
+				<div class="col-xs-offset-2 col-xs-8 text-center">
+					<img src="{{ app.request.basepath }}/images/logo_white.png" alt="Nouveau Logo" title="réalisé par F. Dechomets" style="max-width:100%;"/>
+				</div>
+			</div>
+			<h5>Le festival est recentré sur une seule grosse journée mais avec encore plus de diversité</h5>
+			<div class="row">
+				<div class="col-xs-offset-2 col-xs-8 text-center">
+					<img src="{{ app.request.basepath }}/images/poster2016.jpg" alt="Affiche 2016" title="réalisé par F. Dechomets" class="poster"/>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-xs-4 col-sm-2">
+			<h2>2015</h2>
+		</div>
+		<div class="col-xs-8 col-sm-10 text-left">
+		</div>
+		<div class="col-xs-offset-2 col-xs-10 col-sm-offset-1 col-sm-11 text-left light-border-left" style="padding-left:8%">
+			<h5>D'autres gros projets nous ont bien occupés ces deux dernières années, l'organisation du festival a donc été mise en pause.</h5>
+		</div>
+		<div class="col-xs-4 col-sm-2">
+			<h2>2014</h2>
+		</div>
+		<div class="col-xs-8 col-sm-10 text-left">
+		</div>
+		<div class="col-xs-offset-2 col-xs-10 col-sm-offset-1 col-sm-11 text-left light-border-left" style="padding-left:8%">
+			<h5>&nbsp;</h5>
+		</div>
+
+
+		<div class="col-xs-4 col-sm-2">
+			<h2>2013</h2>
+		</div>
+		<div class="col-xs-8 col-sm-10 text-left">
+			<h3 class="lightgreen">14, 15 juin 2013</h3>
+		</div>
+
+		<div class="col-xs-offset-2 col-xs-10 col-sm-offset-1 col-sm-11 text-left light-border-left" style="padding-left:8%">
+			<h5>Le festival prend de l'ampleur avec une deuxième soirée de musique</h5>
+			<div class="row">
+				<div class="col-xs-offset-2 col-xs-8 text-center">
+					<img src="{{ app.request.basepath }}/images/poster2013.jpg" alt="Affiche 2013" title="réalisé par Service Animation et Communication de St Galmier" class="poster"/>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-4 col-sm-2">
+			<h2>2012</h2>
+		</div>
+		<div class="col-xs-8 col-sm-10 text-left">
+			<h3 class="lightgreen">16 juin 2012</h3>
+		</div>
+
+		<div class="col-xs-offset-2 col-xs-10 col-sm-offset-1 col-sm-11 text-left light-border-left" style="padding-left:8%">
+			<h5>Première édition de la Musique qui Pétille</h5>
+			<div class="row">
+				<div class="col-xs-offset-2 col-xs-8 text-center">
+					<img src="{{ app.request.basepath }}/images/poster2012.jpg" alt="Affiche 2012" class="poster"/>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+{% endblock %}

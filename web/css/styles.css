@@ -76,6 +76,17 @@ h1 > small > small
 	color:white;
 }
 
+h4 small
+{
+	color:rgb(200,200,200);
+}
+
+hr
+{
+	width:20%;
+	border-color:rgb(213,219,74);
+}
+
 
 /* contextual */
 
@@ -184,7 +195,8 @@ h1 > small > small
 	margin-bottom:96px;
 }
 
-img.lmqp
+img.lmqp,
+img.poster
 {
 	width:100%;
 }
@@ -302,3 +314,25 @@ img.photo
 {
 	margin-right:0px;
 }
+
+.light-border-left
+{
+	border:none;
+	border-left:1px solid white;	
+}
+.light-border-right
+{
+	border:none;
+	border-right:1px solid white;	
+}
+
+.lightgreen
+{
+	color:rgb(140,192,65);
+}
+
+.lightyellow
+{
+	color:rgb(213,219,74);
+}
+

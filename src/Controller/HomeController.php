@@ -127,4 +127,28 @@
 					"bookingInfo" => Booking::$validationBooking
 					));
 		}
+		
+		public function programmeAction(Application $app)
+		{
+			$this->menu['prog'] = "active";
+			return $app['twig']->render('programme.html.twig', array("menu" => $this->menu));
+		}
+		
+		public function historyAction(Application $app)
+		{
+			$this->menu['histo'] = "active";
+			return $app['twig']->render('histo.html.twig', array("menu" => $this->menu));
+		}
+		
+		public function informationAction(Application $app)
+		{
+			$this->menu['infos'] = "active";
+			return $app['twig']->render('index.html.twig', array("menu" => $this->menu));
+		}
+		
+		public function partnerAction(Application $app)
+		{
+			$this->menu['part'] = "active";
+			return $app['twig']->render('index.html.twig', array("menu" => $this->menu));
+		}
 	}
