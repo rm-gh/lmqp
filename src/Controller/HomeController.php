@@ -143,7 +143,7 @@
 		public function informationAction(Application $app)
 		{
 			$this->menu['infos'] = "active";
-			return $app['twig']->render('index.html.twig', array("menu" => $this->menu));
+			return $app['twig']->render('infos.html.twig', array("menu" => $this->menu));
 		}
 		
 		public function partnerAction(Application $app)
